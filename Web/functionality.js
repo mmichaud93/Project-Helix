@@ -10,3 +10,6 @@ window.onload = function() {
 		window.location.href = './add.html';
 	});
 }
+function goTo(url){
+    window.location.href=url;
+}

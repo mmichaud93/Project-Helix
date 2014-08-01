@@ -1,105 +1,111 @@
 <!doctype html>
 <html>
 
-<head>
-  <title>Project Helix</title>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <link href='http://fonts.googleapis.com/css?family=Lato|Montserrat+Alternates|Roboto' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./bootstrap-3.2.0-dist/css/bootstrap.css">
+    <head>
+        <title>Project Helix</title>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <link href='http://fonts.googleapis.com/css?family=Lato|Montserrat+Alternates|Roboto' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="./bootstrap-3.2.0-dist/css/bootstrap.css">
 
-  <style>
-    .helix-add-message {
-      font-size: 22px;
-      color: #4e495b;
-    }
-    .helix-add-section {
-      margin-top: 32px;
-      font-family: 'Lato', sans-serif;
-    }
-    .helix-add-title {
-      font-size: 20px;
-      color: #4e495b;
-    }
-    .helix-add-input {
-      font-size: 18px;
-      color: #4e495b;
-      margin: 8px;
-    }
-    .helix-add-album-art {
-      height: 128px;
-    }
-  </style>
-</head>
+        <style>
+            .helix-add-message {
+                font-size: 22px;
+                color: #4e495b;
+            }
+            .helix-add-section {
+                margin-top: 32px;
+                font-family: 'Lato', sans-serif;
+            }
+            .helix-add-title {
+                font-size: 20px;
+                color: #4e495b;
+            }
+            .helix-add-input {
+                font-size: 18px;
+                color: #4e495b;
+                margin: 8px;
+            }
+            .helix-add-album-art {
+                height: 128px;
+            }
+        </style>
+    </head>
+<?php
 
-<body>
-  <nav class="navbar navbar-default helix-nav" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand helix-title" href="./index.html">Project Helix</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./search.html">Discover</a></li>
-        <li><a href="./add.html">Add</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="container helix-card">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1 helix-add-message">
-        Add a song to our database and we will grant you with one wish*. 
-        <br>
-        *Results may vary
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-1 helix-add-section">
-        <span class="helix-add-title">Artist</span>
-        <input name="newArtist" type="text" class="form-control helix-add-input" placeholder="Artist Name">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-1 helix-add-section">
-        <span class="helix-add-title">Album</span>
-        <input name="newAlbum" type="text" class="form-control helix-add-input" placeholder="Album Name">
-        <input id="new-album-art" name="newAlbumArt" type="text" class="form-control helix-add-input" placeholder="Album Art">
-      </div>
-      <div class="col-md-4 col-md-offset-1 helix-add-section">
-        <img id="album-art" class="img-rounded helix-add-album-art" alt=""/>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-1 helix-add-section">
-        <span class="helix-add-title">Title</span>
-        <input name="newTitle" type="text" class="form-control helix-add-input" placeholder="Song Title">
-        <input name="newLink" type="text" class="form-control helix-add-input" placeholder="Song Link">
-      </div>  
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-1 helix-add-section">
-        <span class="helix-add-title">You</span>
-        <input name="newUserName" type="text" class="form-control helix-add-input" placeholder="Your Name">
-        <input name="newUserEmail" type="text" class="form-control helix-add-input" placeholder="Your Email">
-      </div>  
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-1 helix-add-section">
-        <button name="newLink" type="text" class="btn btn-helix">Submit</button>
-      </div>  
-    </div>
-  </div>
+ 
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="./bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="./functionality.js"></script>
-  <script type="text/javascript">
-    $("#new-album-art").change(function() {
-      $("#album-art").attr(
-        'src', $("#new-album-art").val()
-      );
-    });
-  </script>
-</body>
+?>
+
+
+    <body>
+        <nav class="navbar navbar-default helix-nav" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand helix-title" href="./index.php">Project Helix</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="./index.php">Home</a></li>
+                    <li><a href="./search.php">Discover</a></li>
+                    <li><a href="./add.html">Add</a></li>
+                    <li style="text-align:right;"><a href="logout.php">Log Out</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container helix-card">
+	        <form action ="add.php" method="post">
+	            <div class="row">
+	                <div class="col-md-10 col-md-offset-1 helix-add-message">
+	                    Add a song to our database and we will grant you with one wish*. 
+	                    <br>
+	                    *Results may vary
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-md-4 col-md-offset-1 helix-add-section">
+	                    <span class="helix-add-title">Artist</span>
+	                    <input name="newArtist" type="text" class="form-control helix-add-input" placeholder="Artist Name">
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-md-4 col-md-offset-1 helix-add-section">
+	                    <span class="helix-add-title">Album</span>
+	                    <input name="newAlbum" type="text" class="form-control helix-add-input" placeholder="Album Name">
+	                    <input id="new-album-art" name="newAlbumArt" type="text" class="form-control helix-add-input" placeholder="Album Art">
+	                </div>
+	                <div class="col-md-4 col-md-offset-1 helix-add-section">
+	                    <img id="album-art" class="img-rounded helix-add-album-art" alt=""/>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-md-4 col-md-offset-1 helix-add-section">
+	                    <span class="helix-add-title">Title</span>
+	                    <input name="newTitle" type="text" class="form-control helix-add-input" placeholder="Song Title">
+	                    <input name="newLink" type="text" class="form-control helix-add-input" placeholder="Song Link">
+	                </div>  
+	            </div>
+	           
+	            <div class="row">
+	                <div class="col-md-4 col-md-offset-1 helix-add-section">
+	                
+	                    <button name="newLink" type="text" class="btn btn-helix">Submit</button>
+	                
+	                </div>  
+	            </div>
+            </form>
+        </div>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./functionality.js"></script>
+        <script type="text/javascript">
+            $("#new-album-art").change(function() {
+                $("#album-art").attr(
+                    'src', $("#new-album-art").val()
+                );
+            });
+        </script>
+    </body>
+
 
 </html>

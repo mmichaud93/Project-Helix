@@ -1,44 +1,44 @@
 html, body {
-	height: 100%;
-	margin: 0;
-	background-image:url('./images/background.png');
-	background-repeat:no-repeat;
-	background-size: 100%;
-	background-attachment: fixed;
-	font-family: 'Montserrat Alternates', sans-serif;
+    height: 100%;
+    margin: 0;
+    background-image:url('./images/background.png');
+    background-repeat:no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 .helix-nav {
-	margin:0px !important;
-	font-family: 'Montserrat Alternates', sans-serif;
+    margin:0px !important;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 .helix-title {
-	font-size: 34px !important;
-	font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 34px !important;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 .helix-card {
-	padding: 32px;
-	background-color: #ffffff;
-	font-family: 'Lato', sans-serif;
+    padding: 32px;
+    background-color: #ffffff;
+    font-family: 'Lato', sans-serif;
 }
 
 .btn-helix {
-  color: #fff;
-  background-color: #9e808b;
-  border-color: #94808b;
+    color: #fff;
+    background-color: #9e808b;
+    border-color: #94808b;
 }
 .btn-helix:hover,
 .btn-helix:focus,
 .btn-helix:active,
 .btn-helix.active,
 .open > .dropdown-toggle.btn-helix {
-  color: #ffffff;
-  background-color: #9e808b;
-  border-color: #94808b;
+    color: #ffffff;
+    background-color: #9e808b;
+    border-color: #94808b;
 }
 .btn-helix:active,
 .btn-helix.active,
 .open > .dropdown-toggle.btn-helix {
-  background-image: none;
+    background-image: none;
 }
 .btn-helix.disabled,
 .btn-helix[disabled],
@@ -55,11 +55,47 @@ fieldset[disabled] .btn-helix:active,
 .btn-helix.disabled.active,
 .btn-helix[disabled].active,
 fieldset[disabled] .btn-helix.active {
-	color: #fff;
-  background-color: #4e495b;
-  border-color: #48495b;
+    color: #fff;
+    background-color: #4e495b;
+    border-color: #48495b;
 }
 .btn-helix .badge {
-  color: #fff;
-  background-color: #9e808b;
+    color: #fff;
+    background-color: #9e808b;
+}
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+    color: #468847;
+    background-color: #DFF0D8;
+    border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+    color: #B94A48;
+    background-color: #F2DEDE;
+    border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+    margin: 2px 0 3px 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0.9em;
+    line-height: 0.9em;
+    opacity: 0;
+    -moz-opacity: 0;
+    -webkit-opacity: 0;
+
+    transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+    opacity: 1;
 }
