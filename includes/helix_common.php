@@ -241,14 +241,14 @@ function get_songs_table(){
                  $songs_table .='</div>';
                 $songs_table .='<div class="row " data="song">';
             }
-           $songs_table.="<div class='col-md-1 helix-index-item' data='song' style='text-align: center;' onclick='goTo('".$row['song_url']."')'>
+           $songs_table.="<div class='col-md-1 helix-search-item' data='song' style='text-align: center;' onclick='goTo('".$row['song_url']."')'>
                     <div class='row'>
-                        <img src='".$row['artwork_url']."' class='img-rounded helix-index-item-image'>
+                        <img src='".$row['artwork_url']."' class='img-rounded helix-search-item-image'>
                     </div>
-                    <div class='row helix-index-item-title'>
+                    <div class='row helix-search-item-title'>
                         ".$row['song_title']."
                     </div>
-                    <div class='row helix-index-item-artist'>
+                    <div class='row helix-search-item-artist'>
                         ".$row['artist_name']."
                     </div>
                 </div>";

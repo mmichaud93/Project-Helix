@@ -14,7 +14,10 @@
                 font-family: 'Lato', sans-serif;
             }
             .helix-search-item {
+                background-color:#e3ecef;
                 padding: 8px;
+                margin-right: 4px;
+                margin-left:4px;
                 margin-top: 8px;
                 margin-bottom: 8px;
             }
@@ -23,6 +26,7 @@
                 cursor: pointer;
             }
             .helix-search-message {
+                font-size: 24px;
                 color: #4e495b;
                 font-family: 'Lato', sans-serif;
             }
@@ -30,16 +34,17 @@
                 width: 96px;
             }
             .helix-search-item-title {
-                font-size: 28px;
+                font-size: 18px;
             }
             .helix-search-item-artist {
-                font-size: 22px;
+                font-size: 14px;
             }
             .helix-search-get-started {
                 font-size: 18px;
             }
         </style>
     </head>
+
 <?php 
 date_default_timezone_set("America/New_York");
 require_once('../includes/helix_common.php');
@@ -50,7 +55,7 @@ if(!isset($_SESSION['user_id'])){
     exit();
 }
 $user_id = $_SESSION['user_id'];
-$song_table = get_new_songs_table();?>
+$song_table = get_songs_table();?>
     <body>
         <nav class="navbar navbar-default helix-nav" role="navigation">
             <div class="container">
