@@ -259,6 +259,42 @@ function get_songs_table(){
     
     }
 }
+
+function get_songs_search_table($s_query){
+    $mysqli=db_connect();
+
+    $query = "SELECT songs.`song_id`, songs.`title` AS song_title, songs.`song_url`, artists.`artist_name`, albums.`artwork_url`, albums.`title` AS album_title, songs.`create_date`, songs.`click_count` FROM helix_inventory.songs JOIN helix_inventory.albums ON songs.`album_id_fk` = albums.`album_id` JOIN helix_inventory.artists ON albums.`artist_id_fk` = artists.`artist_id` WHERE artists.`artist_name` LIKE '%".$s_query."%' OR songs.`title` LIKE '%".$s_query."%' OR albums.`title` LIKE '%".$s_query."%'";
+    $return = $mysqli->query($query);
+    $songs_table='<div class="row " data="song_3">';
+    if($return === false){
+        error_log('Failed to get songs table');
+        return(false);
+    }else{
+
+        $i=1;
+        while($row = $return->fetch_assoc()){
+            if($i % 11 === 0){
+                 $songs_table .='</div>';
+                $songs_table .='<div class="row " data="song">';
+            }
+           $songs_table.="<div class='col-md-1 helix-search-item' data='song' style='text-align: center;' onclick='goTo('".$row['song_url']."')'>
+                    <div class='row'>
+                        <img src='".$row['artwork_url']."' class='img-rounded helix-search-item-image'>
+                    </div>
+                    <div class='row helix-search-item-title'>
+                        ".$row['song_title']."
+                    </div>
+                    <div class='row helix-search-item-artist'>
+                        ".$row['artist_name']."
+                    </div>
+                </div>";
+            $i++;
+        }
+        $songs_table .="</div>";
+        return($songs_table);
+    
+    }
+}
 function get_popular_songs_table(){
     $mysqli=db_connect();
     $query = "SELECT songs.`song_id`, songs.`title` AS song_title, songs.`song_url`, artists.`artist_name`, albums.`title` AS album_title, songs.`create_date`, songs.`click_count` FROM helix_inventory.songs JOIN helix_inventory.albums ON songs.`album_id_fk` = albums.`album_id` JOIN helix_inventory.artists ON albums.`artist_id_fk` = artists.`artist_id` WHERE ORDER BY `click_count` DESC LIMIT 11";

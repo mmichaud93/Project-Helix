@@ -48,6 +48,7 @@
 <?php 
 date_default_timezone_set("America/New_York");
 require_once('../includes/helix_common.php');
+$song_table = "";
 session_start();
 if(!isset($_SESSION['user_id'])){
     error_log('session not found');
@@ -55,7 +56,14 @@ if(!isset($_SESSION['user_id'])){
     exit();
 }
 $user_id = $_SESSION['user_id'];
-$song_table = get_songs_table();?>
+if(isset($_POST['searchBox'])){
+        $x = $_REQUEST['searchBox'];
+        $song_table = get_songs_search_table($x);
+
+    } else{
+        $song_table = get_songs_search_table("");
+    }
+?>
     <body>
         <nav class="navbar navbar-default helix-nav" role="navigation">
             <div class="container">
@@ -73,12 +81,14 @@ $song_table = get_songs_table();?>
         <div class="container helix-card">
 
             <div class="row" style="margin-top:24px; margin-bottom:48px;">
+            <form action = "search.php" method = "post">
                 <div class="col-md-4 col-md-offset-3 helix-search-message">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" name = "searchBox" class="form-control" placeholder="Search">
                 </div>
                 <div class="col-md-2 helix-search-message">
                     <button class="btn btn-helix">Search</button>
                 </div>
+            </form>
             </div>
             <div class="row" style="margin-top:64px; background-color:#d3d1aa; padding:8px;">
                 <?php echo $song_table; ?>
