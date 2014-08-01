@@ -21,11 +21,11 @@
 		$album_name = $_REQUEST["newAlbum"];
 		$album_art = $_REQUEST["newAlbumArt"];
 		$song_title = $_REQUEST["newTitle"];
-		$song_link = $_REQUEST["newLink"];
+		$song_link = $_REQUEST["newLink1"];
 
-		$artistID = create_artist($artist_name,$album_art);
-		$album_ID = create_album($artistID, $song_link, $song_title);
-		$song_ID  = add_song($album_art, $song_title, $song_link);
+		$artist_ID = create_artist($artist_name,$album_art);
+		$album_ID = create_album($artist_ID, $song_link, $song_title);
+		$song_ID  = add_song($album_ID, $song_title, $song_link);
 
 		header('Location: add.html');
 

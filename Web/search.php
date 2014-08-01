@@ -50,7 +50,7 @@ if(!isset($_SESSION['user_id'])){
     exit();
 }
 $user_id = $_SESSION['user_id'];
-$song_table = get_songs_table();?>
+$song_table = get_new_songs_table();?>
     <body>
         <nav class="navbar navbar-default helix-nav" role="navigation">
             <div class="container">
@@ -66,6 +66,7 @@ $song_table = get_songs_table();?>
             </div>
         </nav>
         <div class="container helix-card">
+
             <div class="row" style="margin-top:24px; margin-bottom:48px;">
                 <div class="col-md-4 col-md-offset-3 helix-search-message">
                     <input type="text" class="form-control" placeholder="Search">
@@ -74,7 +75,10 @@ $song_table = get_songs_table();?>
                     <button class="btn btn-helix">Search</button>
                 </div>
             </div>
-            <?php echo $song_table; ?>
+            <div class="row" style="margin-top:64px; background-color:#d3d1aa; padding:8px;">
+                <?php echo $song_table; ?>
+            </div>
+
         </div>
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

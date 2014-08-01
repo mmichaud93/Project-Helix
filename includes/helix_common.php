@@ -115,7 +115,7 @@ function create_artist($artist_name, $banner_url){
             if($log_level === 1){
                 error_log('Successfully created artist');
             }
-            log($_SESSION['user_id'], 'Created Artist');
+            log($_SESSION['user_id'], $return);
             return($return);
         }
     }else{
@@ -226,6 +226,7 @@ function get_song_by_id($song_id){
 }
 function get_songs_table(){
     $mysqli=db_connect();
+
     $query = "SELECT songs.`song_id`, songs.`title` AS song_title, songs.`song_url`, artists.`artist_name`, albums.`artwork_url`, albums.`title` AS album_title, songs.`create_date`, songs.`click_count` FROM helix_inventory.songs JOIN helix_inventory.albums ON songs.`album_id_fk` = albums.`album_id` JOIN helix_inventory.artists ON albums.`artist_id_fk` = artists.`artist_id` WHERE 1";
     $return = $mysqli->query($query);
     $songs_table='<div class="row " data="song_3">';
@@ -233,6 +234,7 @@ function get_songs_table(){
         error_log('Failed to get songs table');
         return(false);
     }else{
+
         $i=1;
         while($row = $return->fetch_assoc()){
             if($i % 11 === 0){
@@ -254,6 +256,7 @@ function get_songs_table(){
         }
         $songs_table .="</div>";
         return($songs_table);
+    
     }
 }
 function get_popular_songs_table(){

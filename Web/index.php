@@ -43,16 +43,16 @@
         </style>
     </head>
     <?php 
-date_default_timezone_set("America/New_York");
-require_once('../includes/helix_common.php');
-session_start();
-if(!isset($_SESSION['user_id'])){
-    error_log('session not found');
-    header('Location: login.php');
-    exit();
-}
-$user_id = $_SESSION['user_id'];
-$new_song_row = get_new_songs_table();
+        date_default_timezone_set("America/New_York");
+        require_once('../includes/helix_common.php');
+        session_start();
+        if(!isset($_SESSION['user_id'])){
+            error_log('session not found');
+            header('Location: login.php');
+            exit();
+        }
+        $user_id = $_SESSION['user_id'];
+        $new_song_row = get_new_songs_table();
     ?>
 
     <body>
